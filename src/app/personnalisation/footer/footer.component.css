@@ -1,0 +1,28 @@
+footer {
+    background-color: #070000;
+    color: rgb(206, 152, 4);
+    font-size: x-small;
+    width: auto;
+}
+
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img {
+    text-align: center;
+}
+
+footer a {
+    padding-left: 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    padding-right: 10px;
+}

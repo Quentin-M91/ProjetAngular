@@ -1,0 +1,32 @@
+header {
+    background-color: #00070e;
+    color: rgb(206, 152, 4);
+    padding: 10px 20px;
+    width: auto;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header img {
+    border-radius: 120px;
+    height: 70px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #355C7D;
+}
