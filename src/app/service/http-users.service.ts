@@ -6,22 +6,20 @@ import { Injectable } from '@angular/core';
 })
 export class HttpUsersService {
 
-
-  constructor(private httpUsers: HttpClient) { }
-
-  login(body: any) {
-    return this.httpUsers.post<any>("http://localhost:3000/api/auth/login", body)
+  // Récupération des données users dans API httpClient
+  constructor(private httpUtilisateurs: HttpClient) { }
+  login(body: any) {  
+    return this.httpUtilisateurs.post<any>('http://localhost:3000/api/auth/login', body);
   }
 
-  getProducts() {
-    const token = localStorage.getItem("token")
+  getUser() {
+    const token = localStorage.getItem('token');
     console.log(token)
-
-    if (!token) {
-      throw new Error('No authentification token found');
+    if(!token) {
+      throw new Error('No autorization token found');
     }
 
-    const headers = { Authorization: token }
-    return this.httpUsers.get<any>("http://localhost:3000/api/users", { headers })
+    const headers = {Authorization : token};
+    return this.httpUtilisateurs.get<any>('http://localhost:3000/api/users',{headers})
   }
 }

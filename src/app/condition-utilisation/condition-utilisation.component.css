@@ -1,0 +1,87 @@
+/* Style global du body */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 40px;
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  /* Style des titres principaux */
+  h1 {
+    text-align: center;
+    color: #4A90E2;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+  }
+  
+  /* Style des sous-titres h2 */
+  h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    border-bottom: 2px solid #4A90E2;
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
+  
+  /* Style des paragraphes */
+  p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    line-height: 1.7;
+  }
+  
+  /* Style des listes */
+  ul {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    font-size: 1em;
+  }
+  
+  /* Style des liens */
+  a {
+    color: #4A90E2;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Style pour les éléments importants ou citations */
+  blockquote {
+    background-color: #e9f3fc;
+    padding: 15px;
+    margin: 20px 0;
+    border-left: 5px solid #4A90E2;
+    font-style: italic;
+  }
+  
+  /* Style pour les sections du règlement */
+  section {
+    margin-bottom: 20px;
+  }
+  
+  /* Style des éléments de la liste de manière spécifique */
+  ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+  }
+  
+  /* Style pour les espaces entre les sections */
+  h2 + p {
+    margin-top: 0;
+  }
+  
+  /* Appliquer un fond clair et une couleur plus foncée pour chaque section */
+  section:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  section:nth-child(even) {
+    background-color: #f9f9f9;
+  }

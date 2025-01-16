@@ -1,16 +1,59 @@
 <header>
-    <div class="container">
-        <a href="/accueil"><img src="mqj.png" alt="Logo"></a>
+  <div class="logo">
+    <a href="/accueil" alt="Logo"><img src="mqj.png"></a>
+  </div>
 
-        <nav>
-            <ul>
-                <li><a href="/utilisateurs">Utilisateurs</a></li>
-                <li><a href="/produits">Produits</a></li>
-                <li><a href="/clients">Clients</a></li>
-            </ul>
-        </nav>
-    </div>
+  <nav class="nav">
+    <ul>
+      <li><a href="/utilisateurs">Utilisateur</a></li>
+      <li><a href="/produits">Produits</a></li>
+      <li><a href="/clients">Clients</a></li>
+    </ul>
+  </nav>
+
+  <div class="connexion">
+    <button>Connexion</button>
+  </div>
 </header>
 
-<img src="cars.jpg">
+<div class="container">
+
+  <div class="commande-container">
+
+    <div *ngIf="!isFormVisible">
+      <h2>Liste des commandes</h2>
+      <button (click)="showForm()" class="test">Nouvelle commande</button>
+      <div *ngFor="let order of orders" class="commande-card">
+        <div class="commande-info">
+          <p><strong>ID : {{ order.id }}</strong></p>
+          <p><strong>Produit ID : {{ order.productId }}</strong></p>
+          <p><strong>Quantité : {{ order.quantity }}</strong></p>
+          <p><strong>Crée le : {{ order.createdAt }}</strong></p>
+        </div>
+        <button (click)="editOrder(order)">Modifier</button>
+        <button (click)="deleteOrder(order.id)">Supprimer</button>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="isFormVisible" class="container2">
+    <h2>{{ isEdit ? 'Modifier' : 'Créer' }} une commande</h2>
+
+    <form (ngSubmit)="submitForm()">
+      <div class="form-group">
+        <label>Produit ID : </label>
+        <input type="number" [(ngModel)]="orderForm.productId" name="productId" required />
+      </div>
+
+      <div class="form-group">
+        <label>Quantité : </label>
+        <input type="number" [(ngModel)]="orderForm.quantity" name="quantity" required />
+      </div>
+
+      <button type="submit">{{ isEdit ? 'Modifier' : 'Créer' }}</button>
+      <button type="button" (click)="cancelForm()">Annuler</button>
+    </form>
+  </div>
+</div>
+
 <app-footer></app-footer>

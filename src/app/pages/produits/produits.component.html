@@ -1,16 +1,87 @@
 <header>
-    <div class="container">
-        <a href="/accueil"><img src="mqj.png" alt="Logo"></a>
+  <div class="logo">
+    <a href="/accueil" alt="Logo"><img src="mqj.png"></a>
+  </div>
 
-        <nav>
-            <ul>
-                <li><a href="/utilisateurs">Utilisateurs</a></li>
-                <li><a href="/commandes">Commandes</a></li>
-                <li><a href="/clients">Clients</a></li>
-            </ul>
-        </nav>
-    </div>
+  <nav class="nav">
+    <ul>
+      <li><a href="/utilisateurs">Utilisateurs</a></li>
+      <li><a href="/commandes">Commandes</a></li>
+      <li><a href="/clients">Clients</a></li>
+    </ul>
+  </nav>
 </header>
 
-<img src="cars.jpg">
-<app-footer></app-footer>
+
+<body>
+
+  <div class="produits-container">
+    <h1>Liste des Produits</h1>
+
+    <ul>
+      <li *ngFor="let produit of produits">
+        <div class="produit-item">
+          <strong>ID:</strong> {{ produit.id }} <br>
+          <strong>Nom:</strong> {{ produit.name }} <br>
+          <strong>Stock:</strong> {{ produit.stock }} <br>
+
+          <button (click)="editProduct(produit)" class="btn btn-primary">
+            Modifier
+          </button>
+          <button (click)="deleteProduct(produit.id)" class="btn btn-danger">
+            Supprimer
+          </button>
+        </div>
+      </li>
+    </ul>
+
+    <div *ngIf="isEditMode" class="edit-form">
+      <h2>Modifier Produit</h2>
+      <form #editForm="ngForm" (ngSubmit)="saveProduct()">
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input id="id" [(ngModel)]="selectedProduct.id" name="id" required class="form-control" disabled />
+        </div>
+
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input id="name" [(ngModel)]="selectedProduct.name" name="name" required class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input id="stock" type="number" [(ngModel)]="selectedProduct.stock" name="stock" required
+            class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+        <button type="button" (click)="cancelEdit()" class="btn btn-secondary">
+          Annuler
+        </button>
+      </form>
+    </div>
+
+
+    <div class="add-form">
+      <h2>Ajouter un Produit</h2>
+      <form #addForm="ngForm" (ngSubmit)="addProduct()">
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input id="name" [(ngModel)]="newProduct.name" name="name" required class="form-control" />
+        </div>
+
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input id="stock" type="number" [(ngModel)]="newProduct.stock" name="stock" required class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- <img src="cars.jpg"> -->
+  <app-footer></app-footer>
+
+
+</body>

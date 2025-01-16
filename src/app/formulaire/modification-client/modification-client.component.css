@@ -1,0 +1,136 @@
+/* Style pour le conteneur du formulaire */
+.background {
+    background-image: url('/Phare.jpg'); /* Définir le chemin de l'image */
+    background-size: cover; /* L'image couvrira tout l'espace disponible */
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+   
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 60px;
+    background-color: #000000;
+  }
+  
+  .logo img {
+    height: 100px;
+    cursor: pointer;
+  }
+  
+  .nav ul {
+    display: flex;
+    gap: 80px;
+  }
+  
+  .nav a {
+    color: #2175fd;
+    text-decoration: none;
+    font-size: 30px;
+  }
+  
+  .nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .connect a {
+  
+    padding: 8px 16px;
+    font-size: 24px;
+    font-weight: bold;
+    color: greenyellow;
+  }
+  
+  
+  
+  /* 
+  ------------------formulaire--------------------------- */
+  
+  .container {
+    width: 480px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: orange;
+    border-radius: 30px;
+    background-color: 5px solid black;
+    box-shadow: 0px -0px 25px 3px #2175fd;
+    border: 4px solid black;
+    text-align: center;
+    display: block;
+   
+  }
+  
+  /* Titre du formulaire */
+  h2 {
+    text-align: center;
+    color: #2175fd;
+    font-size: 2.5rem;
+    
+    
+    
+  }
+  
+  /* Style des champs du formulaire */
+  .form-group {
+    margin-bottom: 5px;
+  }
+  
+  label {
+    display: block;text-align: left;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 5px;
+    font-size: 1.3rem;
+  }
+  
+  /* Style des champs de texte */
+  input[type="text"], input[type="email"] {
+    width: 98%;
+    padding: 5px;
+    border: 2px solid purple;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    color: black;
+  }
+  
+  input[type="text"]:focus, input[type="email"]:focus {
+    
+    border-color: #2175fd;
+  }
+  
+  /* Style du bouton de soumission */
+  button[type="submit"] {
+    width: 30%;
+    padding: 12px;
+    background-color: #4A90E2;
+    border: 1px solid black;
+    color: white;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    
+  }
+  
+  button[type="submit"]:hover {
+    background-color:green;
+    color: black;
+  }
+  
+  button[type="submit"] {
+    background-color: #2175fd;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  /* Pour les erreurs */
+  .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  

@@ -1,32 +1,396 @@
 header {
-    background-color: #00070e;
-    color: rgb(206, 152, 4);
-    padding: 10px 20px;
-    width: auto;
-}
-
-header .container {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 5px 60px;
+    background-color: #000000;
 }
 
-header img {
-    border-radius: 120px;
-    height: 70px;
+.logo img {
+    height: 100px;
+    cursor: pointer;
 }
 
-nav ul {
+.nav ul {
     list-style: none;
     display: flex;
+    gap: 80px;
 }
 
-nav ul li {
-    margin: 0 15px;
-}
-
-nav ul li a {
+.nav a {
+    color: #D6A553;
     text-decoration: none;
+    font-size: 30px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.newClient a {
+    text-decoration: none;
+    padding: 8px 16px;
+    background-color: black;
+    font-size: 20px;
     font-weight: bold;
-    color: #355C7D;
+    color: #D6A553;
+    border: 3px solid #D6A553;
+
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.newClient a:hover {
+    background-color: green;
+    color: #D6A553;
+    border: 3px solid #D6A553;
+}
+
+/* Responsive Design - Small Screens */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .nav ul {
+
+        gap: 20px;
+        margin-left: -30px;
+
+    }
+
+    .nav a {
+        font-size: 20px;
+    }
+
+    .connexion button {
+        padding: 10px 20px;
+        font-size: medium;
+
+    }
+}
+
+/* ------------------------- tableau clients----------------------------------------------- */
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+h2 {
+    color: #D6A553;
+    font-size: 50px;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* Champ de recherche */
+.container input {
+    padding: 10px;
+    width: 97%;
+    font-size: 25px;
+    /* Taille de police */
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px -0px 25px 3px #2175fd;
+    color: black;
+    /* Texte bleu */
+    background-color: #D6A553;
+    /* Fond blanc */
+    border: 2px solid black;
+    /* Bordure noire */
+    border-radius: 10px;
+    box-shadow: 0px -0px 25px 3px #2175fd;
+}
+
+/* Style du placeholder */
+.container input::placeholder {
+    color: #000005;
+    /* Texte bleu */
+    opacity: 0.5;
+    /* Transparence */
+}
+
+.container input:focus {
+    outline: none;
+}
+
+.block {
+    position: relative;
+    width: 600px;
+    height: 252px;
+    border-radius: 3000px;
+}
+
+.block2 {
+    position: relative;
+    width: 600px;
+    height: 50px;
+    border-radius: 3000px;
+}
+
+.shadow {
+
+    &:before,
+    &:after {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        border-radius: 30px;
+        background: linear-gradient(45deg,
+                #fb0094,
+                #0000ff,
+                #00ff00,
+                #ffff00,
+                #ff0000,
+                #fb0094,
+                #0000ff,
+                #00ff00,
+                #ffff00,
+                #ff0000);
+        /* #D6A553,
+                #2175fd,
+                #D6A553,
+                #2175fd,
+                #D6A553,
+                #2175fd,
+                #D6A553,
+                #2175fd,
+                #D6A553,
+                #2175fd); */
+        background-size: 400%;
+        z-index: -1;
+        animation: shadow 20s linear infinite;
+    }
+
+    &:after {
+        top: -8px;
+        left: -8px;
+        width: calc(100% + 16px);
+        height: calc(100% + 16px);
+        filter: blur(24px);
+        opacity: 1;
+    }
+
+}
+
+@keyframes shadow {
+    0% {
+        background-position: 0 0;
+    }
+
+    50.01% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.clients-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+    padding-bottom: 50px;
+
+}
+
+.clients-container input {
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    justify-items: center;
+    padding-bottom: 50px;
+}
+
+.client-card {
+    width: 600px;
+    /* Définir la largeur de la carte */
+    height: 250px;
+    /* Définir la hauteur de la carte */
+    border: 2px solid black;
+    box-shadow: 0px -0px 25px 3px #2175fd;
+    background-color: #D6A553;
+    border-radius: 30px;
+    z-index: 1;
+}
+
+
+.client-card h3 {
+    color: #2175fd;
+    font-size: 2.0rem;
+    text-align: center;
+    margin: 20px 0px;
+    padding-bottom: 10px;
+}
+
+.client-card input {
+    width: 100%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    background-color: #D6A553;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+}
+
+.client-card input:focus {
+    outline: 2px solid #2175fd;
+}
+
+.btn-validate {
+    background-color: #2175fd;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-validate:hover {
+    background-color: #1b5dbf;
+}
+
+.client-details {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin-top: -35px;
+}
+
+.client-info,
+.client-values {
+    display: flex;
+    flex-direction: column;
+    /* Disposer les informations verticalement */
+
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.client-info p,
+.client-values p {
+    margin: 3px 0px;
+}
+
+.client-info strong {
+    font-weight: bold;
+    color: black;
+    margin-left: 20px;
+
+}
+
+.client-values {
+    font-weight: bold;
+    color: black;
+    margin-left: 10px;
+    text-align: start;
+}
+
+.icone {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: -10px;
+
+
+}
+
+.icone i {
+    cursor: pointer;
+    font-size: 30px;
+    transition: transform 0.2s ease-in-out;
+
+
+}
+
+/* Texte affiché au survol de l'icône "Modifier" */
+.icone i.fa-pen-to-square:hover::after {
+    content: "Modifier";
+    padding: 0px 10px;
+    font-size: 18px;
+}
+
+.icone i.fa-trash-can:hover::after {
+    content: "Supprimer";
+    padding: 0px 10px;
+    font-size: 18px;
+}
+
+.icone i:hover {
+    animation: shake 0.2s;
+}
+
+/* Définition de l'animation shake */
+@keyframes shake {
+    10% {
+        transform: translateX(-3px);
+    }
+
+    20% {
+        transform: translateX(6px);
+    }
+
+    30% {
+        transform: translateX(-3px);
+    }
+
+    40% {
+        transform: translateX(6px);
+    }
+
+    50% {
+        transform: translateX(-3px);
+    }
+
+    60% {
+        transform: translateX(6px);
+    }
+
+    70% {
+        transform: translateX(-3px);
+    }
+
+    80% {
+        transform: translateX(6px);
+    }
+
+    90% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(6px);
+    }
+}
+
+app-footer {
+    position: relative;
+    top: -4px;
 }

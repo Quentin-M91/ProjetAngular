@@ -1,16 +1,50 @@
 <header>
-    <div class="container">
-        <a href="/accueil"><img src="mqj.png" alt="Logo"></a>
+  <div class="logo">
+    <a href="/accueil" alt="Logo"><img src="mqj.png"></a>
+  </div>
 
-        <nav>
-            <ul>
-                <li><a href="/produits">Produits</a></li>
-                <li><a href="/commandes">Commandes</a></li>
-                <li><a href="/clients">Clients</a></li>
-            </ul>
-        </nav>
-    </div>
+  <nav class="nav">
+    <ul>
+      <li><a href="/produits">Produits</a></li>
+      <li><a href="/commandes">Commandes</a></li>
+      <li><a href="/clients">Clients</a></li>
+    </ul>
+  </nav>
+
+  <div class="newClient">
+    <a href="/nouveau-utilisateur">Ajouter Utilisateur</a>
+  </div>
 </header>
 
-<img src="cars.jpg">
-<app-footer></app-footer>
+<div class="container">
+  <h2>Liste des Utilisateurs</h2>
+
+  <!-- Affichage des erreurs -->
+  <div *ngIf="errorMessage" class="error">
+    <p>{{ errorMessage }}</p>
+  </div>
+
+  <!-- Affichage des clients dans des conteneurs individuels -->
+  <div class="clients-container">
+    <div *ngFor="let utilisateur of user" class="client-card">
+      <h3>{{ utilisateur.username }}</h3>
+
+      <div class="client-details">
+        <div class="client-info">
+          <p><strong>Id :</strong></p>
+          <p><strong>rôle :</strong></p>
+          <p><strong>Mot de passe :</strong></p>
+
+        </div>
+
+        <div class="client-values">
+          <p>{{ utilisateur.id }}</p>
+          <p>{{ utilisateur.role }}</p>
+          <p>{{ utilisateur.password }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <app-footer></app-footer>

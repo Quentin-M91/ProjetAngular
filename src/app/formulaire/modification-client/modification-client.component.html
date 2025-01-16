@@ -1,0 +1,52 @@
+<header>
+    <div class="logo">
+      <a href="/accueil" alt="Logo"><img src="mqj.png"></a>
+    </div>
+    
+    <nav class="nav">
+      <ul>
+        <li><a href="/utilisateurs">Utilisateur</a></li>
+        <li><a href="/produits">Produits</a></li>
+        <li><a href="/commandes">Commandes</a></li>
+        <li><a href="/clients">Clients</a></li>
+      </ul>
+    </nav>
+    
+    <div class="connect">
+      <a>Connecté admin</a>
+    </div>
+  </header>
+  
+  
+  
+  <div class="background"> 
+    <div class="container">
+        <h2>nom du client</h2>
+      
+      <!-- <--   Formulaire d'ajout d'un nouveau client -->
+         <form (ngSubmit)="onSubmit()" #clientForm="ngForm">
+          <div class="form-group">
+            <label for="name">Nom</label>
+            <input type="text" id="name" [(ngModel)]="modifClient.name" name="name" required minlength="1" maxlength="45" placeholder="{{modifClient.name}}" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" [(ngModel)]="modifClient.email" name="email" required minlength="6" maxlength="45" />
+          </div>
+          <div class="form-group">
+            <label for="phone">Téléphone</label>
+            <input type="text" id="phone" [(ngModel)]="modifClient.phone" name="phone" required minlength="6" maxlength="20"/>
+          </div>
+          <div class="form-group">
+            <label for="address">Adresse</label>
+            <input type="text" id="address" [(ngModel)]="modifClient.address" name="address" required minlength="1" maxlength="90" />
+          </div>
+         
+          <button type="submit" [disabled]="!clientForm.form.valid">Validé</button>
+        </form>
+      </div>
+  </div>
+  <app-footer></app-footer>
+
+
+

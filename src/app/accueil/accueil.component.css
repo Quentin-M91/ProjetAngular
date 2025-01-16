@@ -1,0 +1,199 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 60px;
+    background-color: #000000;
+}
+
+.logo img {
+    height: 100px;
+    cursor: pointer;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 80px;
+    margin-left: -50px;
+}
+
+.nav a {
+    color: #D6A553;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.nav a:hover {
+    text-decoration: underline;
+}
+
+.connexion-status button {
+
+    padding: 8px 16px;
+    background-color: black;
+    font-size: 18px;
+    font-weight: bold;
+    color: #D6A553;
+    border: 3px solid #D6A553;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.connexion-status :hover {
+    background-color: green;
+    color: black;
+}
+
+/* Responsive Design - Small Screens */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 30px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .nav ul {
+
+        gap: 20px;
+        margin-left: -30px;
+
+    }
+
+    .nav a {
+        font-size: 20px;
+    }
+
+    .connexion-status button {
+        padding: 10px 20px;
+        font-size: medium;
+
+    }
+}
+
+
+.font {
+    background-image: url('/cars.jpg');
+    background-size: cover;
+    /* Cette propriété permet à l'image de couvrir tout l'élément */
+    background-position: center top;
+    /* L'image est centrée horizontalement et alignée vers le haut */
+    background-repeat: no-repeat;
+    /* Empêche l'image de se répéter */
+    height: 100vh;
+    /* Si vous voulez que l'image couvre toute la hauteur de la fenêtre */
+    display: flex;
+    padding-top: 20px;
+    color: lightyellow;
+    justify-content: center;
+    /* Permet de centrer le contenu à l'intérieur du conteneur */
+}
+
+
+/* L'image qui doit se redimensionner proportionnellement */
+.responsive-image {
+    width: 100%;
+    /* L'image occupe toute la largeur du conteneur */
+    height: auto;
+    /* La hauteur est ajustée automatiquement pour maintenir les proportions */
+    object-fit: cover;
+    /* Si l'image ne garde pas ses proportions ou déborde, cela la recadre */
+    max-height: 90vh;
+    /* Limite la hauteur de l'image à 60% de la hauteur de la fenêtre */
+}
+
+/* Responsive Design pour garantir la largeur entière sur tous les écrans */
+@media (max-width: 768px) {
+    .image-container {
+        width: 100%;
+    }
+
+    .responsive-image {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+/* ------------------texte------------------------------- */
+.text-container {
+    display: inline-block;
+    /* Ajuste la largeur à celle du contenu */
+    background: rgba(0, 0, 0, 0.5);
+
+}
+
+h1 {
+    text-align: center;
+
+
+}
+
+h1 strong {
+    font-size: 50px;
+
+}
+
+p {
+    display: inline-block;
+    padding: 3px 17px;
+    margin-left: 150px;
+    margin-right: 150px;
+    font-size: 1.3em;
+    background: rgba(0, 0, 0, 0.7);
+
+}
+
+h2 {
+    display: inline-block;
+    /* Adapte la largeur à celle du texte */
+    font-size: 1.6em;
+    padding: 3px 10px;
+    /* Ajoute un espace intérieur autour du texte */
+    margin-left: 150px;
+    background: rgba(0, 0, 0, 0.7);
+    /* Fond semi-transparent */
+    color: white;
+    /* Texte blanc pour le contraste */
+    border-radius: 5px;
+    /* Coins arrondis pour un style agréable */
+    text-align: left;
+    /* Alignement à gauche par défaut */
+
+}
+
+li {
+    margin-left: 5px;
+    padding-left: 25px;
+
+}
+
+
+
+
+
+.container ul {
+    padding: 3px 10px;
+    padding-left: 25px;
+    margin-left: 190px;
+    margin-right: 150px;
+    font-size: 1.3em;
+    font-style: italic;
+    background: rgba(0, 0, 0, 0.7);
+    line-height: 1.0;
+
+}
+
+li strong {
+    font-style: normal;
+}
+
+app-footer {
+    position: relative;
+    top: -4px;
+    /* Déplace le footer de 20px vers le haut */
+}

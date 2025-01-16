@@ -1,4 +1,84 @@
-<app-header></app-header>
-<img src="cars.jpg">
+<header>
+    <div class="logo">
+      <img src="mqj.png" alt="Logo"/>
+    </div>
+    
+    <nav class="nav">
+      <ul>
+        <li><a href="/utilisateurs">Utilisateur</a></li>
+        <li><a href="/produits">Produits</a></li>
+        <li><a href="/commandes">Commandes</a></li>
+        <li><a href="/clients">Clients</a></li>
+      </ul>
+    </nav>
+    
+    <div class="connexion-status">
+      <button (click)="handleAuthAction()">
+        {{ isLoggedIn ? 'Se déconnecter' : 'Connectez-vous' }}
+      </button>
+    </div>
+    
+    
+</header>
+
+
+
+  <div class="font">
+  <div class="container">
+      <h1><strong>Bienvenue chez MQJ automobile</strong> <br> Votre destination pour les voitures de luxe</h1>
+      <p>Découvrez l'univers de l'automobile de prestige avec MQJ Automobile, le leader dans la vente de voitures de luxe haut de gamme. Nous vous proposons une sélection exclusive de véhicules des marques les plus prestigieuses, alliant performance, design et confort.</p>
+
+      <h2>Pourquoi choisir MQJ automobile ?</h2>
+      <ul>
+          <li><strong>Qualité irréprochable</strong> : Chaque voiture que nous proposons est minutieusement sélectionnée, inspectée et remise à neuf, pour garantir une qualité sans compromis.</li>
+          <li><strong>Service sur mesure</strong> : Profitez d’un service client personnalisé. Nous vous conseillons et vous accompagnons dans le choix du modèle qui correspond à vos besoins et à votre style de vie.</li>
+          <li><strong>Financement flexible</strong>: Nous offrons diverses solutions de financement pour rendre l’acquisition de votre voiture de rêve plus accessible.</li>
+          <li><strong>Livraison rapide et sécurisée</strong> : Une fois votre choix effectué, nous assurons une livraison rapide et sécurisée à l’adresse de votre choix.</li>
+      </ul>
+
+      <h2>Explorez notre collection</h2>
+      <p>Naviguez sur notre site pour découvrir notre vaste collection de voitures de luxe. Grâce à notre interface simple et intuitive, il vous suffit de quelques clics pour trouver la voiture qui correspond à vos critères.</p>
+  </div>
+</div>
 <app-footer></app-footer>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <app-header></app-header>
+
+<body>
+    <div class="entete">
+        <h1>Bienvenue chez MQJ-Automobile.</h1>
+        <p>Ici, vous pouvez trouver un large stock de produits phares de notre boutique. Vous pouvez accéder à notre
+            magasin en vous connectant/créant un compte via la voiture placé dans l'en-tête de notre site.</p>
+        <p>Vous pourrez accéder à notre page des produits qui concerne tout notre merch.</p>
+    </div>
+</body>
+
+<app-footer></app-footer> -->

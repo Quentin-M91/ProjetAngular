@@ -1,35 +1,47 @@
-<html>
+<header class="app-header">
+    <div class="logo">
+      <img src="mqj.png" alt="Logo" height="70" />
+    </div>
 
-<header>
-    <div class="container">
-        <a href="/accueil"><img src="mqj.png" alt="Logo" height="70"></a>
-        <h2>Connectez-vous pour accédé à nos services !</h2>
+    <div class="centre">
+        <h2>! Connectez-vous pour accédé au service !</h2>
+    </div>
+
+    
+
+    <div class="status">
         <p>Déconnecté</p>
     </div>
-</header>
+    
+  </header>
 
-<body>
-
-    <div id="identification">
-        <div id="utilisateur">
-
-            <img src="mqj.png" width="25%" />
-            <h2>Identification</h2>
-            <input placeholder="Nom d'utilisateur" type="text" />
-            <input placeholder="Mot de passe" type="password" />
-            <button>Validez</button>
-
-            <div class="newUtilisateur">
-                <a href="./inscription">Nouveau membre</a>
-            </div>
-
-            <a href="/conditions-generales" class="conditions-link">Conditions Générales d'utilisation</a>
-
-        </div>
+  <div id="identification">
+    
+    <div id="utilisateur">
+      <h2>Identification</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="speudo">
+      <input 
+        type="text" 
+        placeholder="Nom d'utilisateur" 
+        [(ngModel)]="authData.username" 
+        name="username" 
+        required 
+      />
+      <input 
+        type="password" 
+        placeholder="Mot de passe" 
+        [(ngModel)]="authData.password" 
+        name="password" 
+        required 
+      />
     </div>
+    <div class="validez">
+      <button type="submit">Validez</button>
+    </div>
+  </form>
 
-</body>
+        
+</div>
 
 <app-footer></app-footer>
-
-</html>
